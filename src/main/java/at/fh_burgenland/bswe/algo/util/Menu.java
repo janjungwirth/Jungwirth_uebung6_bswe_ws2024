@@ -54,8 +54,17 @@ public class Menu {
                     return;
                 }
                 case "1" -> {
-                    sorted = bubbleSortClassic.sort(data); //TODO @Camila
-                    throw new RuntimeException("TODO");
+                    try {
+                        ColorHelper.printBlue("Running Bubble Sort Classic running...");
+                        sorted = bubbleSortClassic.sort(data);
+                        if (sorted == null) {
+                            throw new RuntimeException("Bubble Sort Classic returned null. Sorting failed.");
+                        }
+                        ColorHelper.printGreen("Sorting completed using Bubble Sort Classic!");
+                    } catch (RuntimeException e) {
+                        System.err.println("An error occurred while running Bubble Sort Classic: " + e.getMessage());
+                        throw e;
+                    }
                 }
                 case "2" -> throw new RuntimeException("TODO"); //TODO @Jan
                 case "3" -> throw new RuntimeException("TODO"); //TODO @Jan
