@@ -1,4 +1,4 @@
-package at.fh_burgenland.bswe.algo.countingsort;
+package at.fh_burgenland.bswe.algo.bubblesortclassic;
 
 import at.fh_burgenland.bswe.algo.bubblesort.BubbleSortClassic;
 import org.junit.jupiter.api.Assertions;

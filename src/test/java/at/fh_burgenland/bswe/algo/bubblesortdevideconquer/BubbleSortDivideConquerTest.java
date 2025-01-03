@@ -1,4 +1,4 @@
-package at.fh_burgenland.bswe.algo.BubbleSortDevideConcur;
+package at.fh_burgenland.bswe.algo.bubblesortdevideconquer;
 
 
 import org.junit.jupiter.api.DisplayName;
@@ -8,8 +8,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class BubbleSortDeviceConcurTest {
-    BubbleSortDeviceConcur<Integer> bs = new BubbleSortDeviceConcur<>();
+class BubbleSortDivideConquerTest {
+    BubbleSortDivideConquer<Integer> bs = new BubbleSortDivideConquer<>();
 
     /**
      * Given: An empty List.

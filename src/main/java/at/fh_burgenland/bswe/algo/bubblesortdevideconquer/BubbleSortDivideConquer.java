@@ -1,9 +1,16 @@
-package at.fh_burgenland.bswe.algo.BubbleSortDevideConcur;
+package at.fh_burgenland.bswe.algo.bubblesortdevideconquer;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class BubbleSortDeviceConcur <T extends Comparable<T>>{
+public class BubbleSortDivideConquer<T extends Comparable<T>>{
+
+    private static final Logger logger = LogManager.getLogger("ConsoleLogger");
+    private static final Logger fileLogger = LogManager.getLogger("FileLogger");
+    private static long iterationsCounter = 0;
 
     /**
      * Sorts the given list of elements using a bubble sort algorithm implemented in a concurrent sublist manner.
@@ -12,12 +19,16 @@ public class BubbleSortDeviceConcur <T extends Comparable<T>>{
      * @return a sorted list of elements in ascending order
      */
     public List<T> sort(List<T> items) {
+        iterationsCounter = 0;
+        //Timer and counter for performance logging
+        long time = System.nanoTime();
+
         if(items==null || items.isEmpty())
             return new LinkedList<>();
         if( items.size()==1)
             return items;
 
-        final BubbleSortDeviceConcur<T> bs = new BubbleSortDeviceConcur<>();
+        final BubbleSortDivideConquer<T> bs = new BubbleSortDivideConquer<>();
         final LinkedList<LinkedList<T>> parts = bs.partIntoLists(items);
         do{
             bs.bubbleSubLists(parts);
@@ -25,6 +36,11 @@ public class BubbleSortDeviceConcur <T extends Comparable<T>>{
             parts.getLast().removeFirst();
         }while(!parts.getLast().isEmpty());
         bs.bubbleSubLists(parts);
+
+        long totalTimeToSort = (System.nanoTime() - time);
+        logger.info("Bubble Sort Divide & Conquer completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", items.size(), iterationsCounter, totalTimeToSort / 1000);
+        fileLogger.info(System.getenv().get("COMPUTERNAME") + ": Bubble Sort Divide & Conquer completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", items.size(), iterationsCounter, totalTimeToSort / 1000);
+
         return parts.getFirst();
     }
 
@@ -34,7 +50,7 @@ public class BubbleSortDeviceConcur <T extends Comparable<T>>{
      * @param parts the parts
      */
     private void bubbleSubLists(LinkedList<LinkedList<T>> parts) {
-        BubbleSortDeviceConcur<T> bs = new BubbleSortDeviceConcur<>();
+        BubbleSortDivideConquer<T> bs = new BubbleSortDivideConquer<>();
         parts.set(0, bs.bubbleSort(parts.getFirst()));
         parts.set(1, bs.bubbleSort(parts.getLast()));
     }
@@ -62,6 +78,7 @@ public class BubbleSortDeviceConcur <T extends Comparable<T>>{
         for(int y = 0; y < items.size(); y++){
             boolean sorted = true;
             for (int i = 0; i < itemsCopy.size()-1; i++) {
+                iterationsCounter++;
                 if(itemsCopy.get(i).compareTo(itemsCopy.get(i+1))>0){
                     sorted = false;
                     swap(itemsCopy, i);

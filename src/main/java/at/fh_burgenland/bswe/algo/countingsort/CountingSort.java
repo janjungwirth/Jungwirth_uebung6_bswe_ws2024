@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
  */
 public class CountingSort {
     private static final Logger logger = LogManager.getLogger("ConsoleLogger");
+    private static final Logger fileLogger = LogManager.getLogger("FileLogger");
     /**
      * Sorts the given list using Counting Sort.
      *
@@ -56,6 +57,7 @@ public class CountingSort {
         }
         long totalTimeToSort = (System.nanoTime() - time);
         logger.info("Counting sort completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", list.size(), iterationsCounter, totalTimeToSort / 1000);
+        fileLogger.info(System.getenv().get("COMPUTERNAME") + ": Counting sort completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", list.size(), iterationsCounter, totalTimeToSort / 1000);
         return sorted;
     }
 }
