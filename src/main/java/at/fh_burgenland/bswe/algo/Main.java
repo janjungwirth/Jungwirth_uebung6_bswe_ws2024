@@ -9,10 +9,5 @@ public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu();
         menu.show();
-        //TODO:
-        // - Implement Bubble Sort variations
-        // - Implement performance testing
-        // - Run performance testing on different devices
-        // - Write complexity and performance analysis pdf
     }
 }

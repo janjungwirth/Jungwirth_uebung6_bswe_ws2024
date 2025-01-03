@@ -8,3 +8,13 @@
 2025-01-03T10:26:46,455 [main] INFO  FileLogger - LAPTOP-8TQMU4B2: Bubble Sort Divide & Conquer completed. Sorting an input of size 10 took 91 total iteration steps in 50 microseconds
 2025-01-03T10:26:51,147 [main] INFO  FileLogger - LAPTOP-8TQMU4B2: Counting sort completed. Sorting an input of size 10 took 1045 total iteration steps in 101 microseconds
 
+2025-01-03T10:30:03,734 [main] INFO  FileLogger - JAN: Bubble Sort Classic completed. Sorting an input of size 1000 took 499500 total iteration steps in 38971 microseconds
+2025-01-03T10:30:11,676 [main] INFO  FileLogger - JAN: Bubble Sort Divide & Conquer completed. Sorting an input of size 1000 took 1306383 total iteration steps in 1394203 microseconds
+2025-01-03T10:30:17,358 [main] INFO  FileLogger - JAN: Counting sort completed. Sorting an input of size 1000 took 762146 total iteration steps in 7631 microseconds
+2025-01-03T10:30:24,910 [main] INFO  FileLogger - JAN: Bubble Sort Classic completed. Sorting an input of size 1000 took 499395 total iteration steps in 3155 microseconds
+2025-01-03T10:30:30,850 [main] INFO  FileLogger - JAN: Bubble Sort Divide & Conquer completed. Sorting an input of size 1000 took 1352790 total iteration steps in 1390527 microseconds
+2025-01-03T10:30:38,167 [main] INFO  FileLogger - JAN: Counting sort completed. Sorting an input of size 1000 took 3000 total iteration steps in 761 microseconds
+2025-01-03T10:31:08,969 [main] INFO  FileLogger - JAN: Bubble Sort Classic completed. Sorting an input of size 10 took 42 total iteration steps in 3 microseconds
+2025-01-03T10:31:14,160 [main] INFO  FileLogger - JAN: Bubble Sort Divide & Conquer completed. Sorting an input of size 10 took 91 total iteration steps in 121 microseconds
+2025-01-03T10:31:19,156 [main] INFO  FileLogger - JAN: Counting sort completed. Sorting an input of size 10 took 1045 total iteration steps in 99 microseconds
+
