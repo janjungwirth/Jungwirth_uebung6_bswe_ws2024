@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class BubbleSortClassic {
 
     private static final Logger logger = LogManager.getLogger("ConsoleLogger");
-    private static final Logger fileLogger = LogManager.getLogger("FileLogger");
+    //private static final Logger fileLogger = LogManager.getLogger("FileLogger");
 
     public ArrayList<Integer> sort(ArrayList<Integer> list) {
         //Timer and counter for performance logging
@@ -43,7 +43,7 @@ public class BubbleSortClassic {
         //Log time and iterations
         long totalTimeToSort = (System.nanoTime() - time);
         logger.info("Bubble Sort Classic completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", list.size(), iterationsCounter, totalTimeToSort / 1000);
-        fileLogger.info(System.getenv().get("COMPUTERNAME") + ": Bubble Sort Classic completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", list.size(), iterationsCounter, totalTimeToSort / 1000);
+        //fileLogger.info(System.getenv().get("COMPUTERNAME") + ": Bubble Sort Classic completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", list.size(), iterationsCounter, totalTimeToSort / 1000);
         //Return results
         return list;
     }

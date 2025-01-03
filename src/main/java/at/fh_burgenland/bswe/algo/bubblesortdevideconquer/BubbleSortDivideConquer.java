@@ -9,7 +9,7 @@ import java.util.List;
 public class BubbleSortDivideConquer<T extends Comparable<T>>{
 
     private static final Logger logger = LogManager.getLogger("ConsoleLogger");
-    private static final Logger fileLogger = LogManager.getLogger("FileLogger");
+    //private static final Logger fileLogger = LogManager.getLogger("FileLogger");
     private static long iterationsCounter = 0;
 
     /**
@@ -39,7 +39,7 @@ public class BubbleSortDivideConquer<T extends Comparable<T>>{
 
         long totalTimeToSort = (System.nanoTime() - time);
         logger.info("Bubble Sort Divide & Conquer completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", items.size(), iterationsCounter, totalTimeToSort / 1000);
-        fileLogger.info(System.getenv().get("COMPUTERNAME") + ": Bubble Sort Divide & Conquer completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", items.size(), iterationsCounter, totalTimeToSort / 1000);
+        //fileLogger.info(System.getenv().get("COMPUTERNAME") + ": Bubble Sort Divide & Conquer completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", items.size(), iterationsCounter, totalTimeToSort / 1000);
 
         return parts.getFirst();
     }

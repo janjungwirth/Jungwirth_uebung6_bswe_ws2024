@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
  */
 public class CountingSort {
     private static final Logger logger = LogManager.getLogger("ConsoleLogger");
-    private static final Logger fileLogger = LogManager.getLogger("FileLogger");
+    //private static final Logger fileLogger = LogManager.getLogger("FileLogger");
     /**
      * Sorts the given list using Counting Sort.
      *
@@ -23,13 +23,14 @@ public class CountingSort {
      * @throws ArrayIndexOutOfBoundsException if negative numbers are in input List
      */
     public ArrayList<Integer> sort(ArrayList<Integer> list) throws ArrayIndexOutOfBoundsException {
+        //Preparing Logging
         long time = System.nanoTime();
+        long iterationsCounter = 0;
 
         if (list == null || list.isEmpty()) {
             return new ArrayList<>();
         }
 
-        long iterationsCounter = 0;
         int max = Collections.max(list);
         int[] count = new int[max + 1];
 
@@ -55,9 +56,10 @@ public class CountingSort {
             count[value]--;
             iterationsCounter++;
         }
+        //Logging time and iterations
         long totalTimeToSort = (System.nanoTime() - time);
         logger.info("Counting sort completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", list.size(), iterationsCounter, totalTimeToSort / 1000);
-        fileLogger.info(System.getenv().get("COMPUTERNAME") + ": Counting sort completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", list.size(), iterationsCounter, totalTimeToSort / 1000);
+        //fileLogger.info(System.getenv().get("COMPUTERNAME") + ": Counting sort completed. Sorting an input of size {} took {} total iteration steps in {} microseconds", list.size(), iterationsCounter, totalTimeToSort / 1000);
         return sorted;
     }
 }

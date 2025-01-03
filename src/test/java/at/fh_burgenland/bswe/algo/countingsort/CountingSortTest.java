@@ -84,6 +84,16 @@ public class CountingSortTest {
         Assertions.assertEquals(sorted, result);
     }
 
+    @Test
+    @DisplayName("when given a list containing any negative number, should throw ArrayIndexOutOfBoundsException")
+    public void throwOnNegativeNumber() {
+        ArrayList<Integer> input = new ArrayList<>();
+        input.add(1);
+        input.add(-3);
+        input.add(17);
+        Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () ->  sorter.sort(input));
+    }
+
     /**
      * Helper method to generate a list of random integers.
      */
